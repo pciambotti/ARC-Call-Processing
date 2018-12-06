@@ -1,0 +1,21 @@
+To Create a service you need:
+
+Name: ARC_CallProcessing_CyberSource
+Path: F:\ghclients\portal\programs\arc\ARC_CallProcessing_CyberSource\ARC_CallProcessing_CyberSource.exe
+Display: ARC CallProcessing CyberSource
+
+Put them in the below line and use a CMD prompt to run it
+
+
+sc create ARC_CallProcessing_CyberSource binpath= "" displayname= "" depend= Tcpip start= demand
+
+sc create ARC_CallProcessing_CyberSource binpath= "" displayname= "ARC CallProcessing CyberSource" depend= Tcpip start= demand
+
+sc create ARC_CallProcessing_CyberSource binpath= "F:\ghclients\portal\programs\arc\ARC_CallProcessing_CyberSource\\ARC_CallProcessing_CyberSource.exe" displayname= "ARC CallProcessing CyberSource" depend= Tcpip start= demand
+
+    /// <summary>
+    /// This service will query the Oracle Database and update the GH Portal database
+    /// 1. Query GHCA811 for users modified within the last X hours (1 by default)
+    /// 2. Update or Insert users into GH_Portal DB based on existance
+    /// 3. Loop every X minutes (5 by default)
+    /// </summary>
